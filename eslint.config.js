@@ -18,6 +18,12 @@ export default [
   ...vueTsEslintConfig(),
 
   {
+    rules: {
+      'vue/attributes-order': ['error', { alphabetical: true }],
+    },
+  },
+
+  {
     ...pluginVitest.configs.recommended,
     files: ['src/**/__tests__/*'],
   },

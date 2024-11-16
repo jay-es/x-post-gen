@@ -1,17 +1,36 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref } from 'vue'
+import AppSection from './components/AppSection.vue'
+import * as defaultValues from './default-values'
+
+const template = ref(defaultValues.template)
+const data = ref(defaultValues.data)
+</script>
 
 <template>
   <main class="grid grid-cols-3 gap-x-4">
-    <div class="h-full bg-slate-100"></div>
-    <div class="h-full bg-slate-200"></div>
-    <div class="h-full bg-slate-300"></div>
+    <AppSection title="Template">
+      <textarea
+        v-model="template"
+        class="textarea textarea-bordered h-40 w-full resize-y"
+      />
+      <!-- TODO: how to use -->
+    </AppSection>
+    <AppSection class="grid grid-rows-[auto_1fr]" title="Data">
+      <textarea
+        v-model="data"
+        class="textarea textarea-bordered resize-none font-mono"
+      />
+    </AppSection>
+    <AppSection title="Output" />
   </main>
 
-  <footer class="text-center">
+  <footer class="space-x-1 text-center">
+    <h1 class="inline">X Post Generator</h1>
     <a
       href="https://github.com/jay-es/x-post-gen"
-      target="_blank"
       rel="noopener noreferrer"
+      target="_blank"
     >
       &copy;<span class="underline">jay-es</span>
     </a>
