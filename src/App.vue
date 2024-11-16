@@ -1,47 +1,19 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
+  <main class="grid grid-cols-3 gap-x-4">
+    <div class="h-full bg-slate-100"></div>
+    <div class="h-full bg-slate-200"></div>
+    <div class="h-full bg-slate-300"></div>
   </main>
+
+  <footer class="text-center">
+    <a
+      href="https://github.com/jay-es/x-post-gen"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      &copy;<span class="underline">jay-es</span>
+    </a>
+  </footer>
 </template>
-
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
