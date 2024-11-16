@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import AppSection from './components/AppSection.vue'
+import PostList from './components/PostList.vue'
 import * as defaultValues from './default-values'
 
 const template = ref(defaultValues.template)
@@ -12,17 +13,19 @@ const data = ref(defaultValues.data)
     <AppSection title="Template">
       <textarea
         v-model="template"
-        class="textarea textarea-bordered h-40 w-full resize-y"
+        class="textarea textarea-bordered w-full resize-y"
       />
       <!-- TODO: how to use -->
     </AppSection>
     <AppSection class="grid grid-rows-[auto_1fr]" title="Data">
       <textarea
         v-model="data"
-        class="textarea textarea-bordered resize-none font-mono"
+        class="textarea textarea-bordered resize-none break-all font-mono"
       />
     </AppSection>
-    <AppSection title="Output" />
+    <AppSection title="Output">
+      <PostList :data="data" :template="template" />
+    </AppSection>
   </main>
 
   <footer class="space-x-1 text-center">

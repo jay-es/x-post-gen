@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.textarea {
+  @apply rounded-md;
+  field-sizing: content;
+  line-height: unset;
+}
