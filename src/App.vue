@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import AppSection from './components/AppSection.vue'
 import PostList from './components/PostList.vue'
 import * as defaultValues from './default-values'
+import HowToUse from './components/HowToUse.vue'
 
 const template = ref(defaultValues.template)
 const data = ref(defaultValues.data)
@@ -15,7 +16,7 @@ const data = ref(defaultValues.data)
         v-model="template"
         class="textarea textarea-bordered w-full resize-y"
       />
-      <!-- TODO: how to use -->
+      <HowToUse />
     </AppSection>
     <AppSection class="grid grid-rows-[auto_1fr]" title="Data">
       <textarea
