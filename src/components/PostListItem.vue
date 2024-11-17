@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import twitterText from 'twitter-text'
 import { computed } from 'vue'
 import ErrorMessage from './ErrorMessage.vue'
 
@@ -20,7 +21,9 @@ const result = computed(() => {
     text = text.replace(brace, String(post[prop] ?? ''))
   }
 
-  return { errors, text }
+  const parsed = twitterText.parseTweet(text)
+
+  return { errors, parsed, text }
 })
 </script>
 
@@ -30,12 +33,18 @@ const result = computed(() => {
       class="textarea textarea-bordered resize-none bg-neutral-50"
       readonly
       :value="result.text.trim()"
+      @dblclick="($event.target as HTMLTextAreaElement).select()"
     />
     <div class="label py-0.5">
-      <ErrorMessage v-if="result.errors.length > 0" class="label-text-alt">
+      <ErrorMessage class="label-text">
         {{ result.errors.join(' ') }}
       </ErrorMessage>
-      <!-- TODO: 文字数カウント -->
+      <span
+        class="label-text-alt"
+        :class="{ 'text-error': !result.parsed.valid }"
+      >
+        {{ result.parsed.weightedLength }}/280
+      </span>
     </div>
   </div>
 </template>

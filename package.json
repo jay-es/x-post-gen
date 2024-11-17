@@ -14,6 +14,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "twitter-text": "^3.1.0",
     "vue": "^3.5.12"
   },
   "devDependencies": {
