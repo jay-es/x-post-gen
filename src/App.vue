@@ -9,7 +9,7 @@ const data = ref(defaultValues.data)
 </script>
 
 <template>
-  <main class="grid grid-cols-3 gap-x-4">
+  <main class="grid grid-cols-3 gap-x-6">
     <AppSection title="Template">
       <textarea
         v-model="template"

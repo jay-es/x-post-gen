@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .textarea {
-  @apply rounded-md;
+  @apply min-h-0 rounded-md;
   field-sizing: content;
   line-height: unset;
 }

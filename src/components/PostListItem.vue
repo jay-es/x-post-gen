@@ -30,12 +30,12 @@ const result = computed(() => {
 <template>
   <div class="form-control">
     <textarea
-      class="textarea textarea-bordered resize-none bg-neutral-50"
+      class="textarea textarea-bordered resize-none bg-base-200"
       readonly
       :value="result.text.trim()"
       @dblclick="($event.target as HTMLTextAreaElement).select()"
     />
-    <div class="label py-0.5">
+    <div class="label py-px">
       <ErrorMessage class="label-text">
         {{ result.errors.join(' ') }}
       </ErrorMessage>
