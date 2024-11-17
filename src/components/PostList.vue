@@ -26,7 +26,7 @@ function hasProperty(value: unknown): value is Record<string, unknown> {
   <ErrorMessage v-else-if="!Array.isArray(posts)">
     Data must be an array.
   </ErrorMessage>
-  <ul v-else class="space-y-2">
+  <ul v-else class="space-y-3">
     <li v-for="post in posts" :key="JSON.stringify(post)">
       <PostListItem
         v-if="hasProperty(post)"

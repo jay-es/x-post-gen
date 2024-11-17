@@ -4,6 +4,7 @@ import AppSection from './components/AppSection.vue'
 import PostList from './components/PostList.vue'
 import * as defaultValues from './default-values'
 import HowToUse from './components/HowToUse.vue'
+import ThemeToggle from './components/ThemeToggle.vue'
 
 const template = ref(defaultValues.template)
 const data = ref(defaultValues.data)
@@ -11,20 +12,20 @@ const data = ref(defaultValues.data)
 
 <template>
   <main class="grid grid-cols-3 gap-x-6">
-    <AppSection title="Template">
+    <AppSection title="1. Template">
       <textarea
         v-model="template"
         class="textarea textarea-bordered w-full resize-y"
       />
       <HowToUse />
     </AppSection>
-    <AppSection class="grid grid-rows-[auto_1fr]" title="Data">
+    <AppSection class="grid grid-rows-[auto_1fr]" title="2. Data">
       <textarea
         v-model="data"
         class="textarea textarea-bordered resize-none break-all font-mono"
       />
     </AppSection>
-    <AppSection title="Output">
+    <AppSection title="3. Output">
       <PostList :data="data" :template="template" />
     </AppSection>
   </main>
@@ -39,4 +40,6 @@ const data = ref(defaultValues.data)
       &copy;<span class="underline">jay-es</span>
     </a>
   </footer>
+
+  <ThemeToggle />
 </template>

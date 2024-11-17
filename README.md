@@ -7,6 +7,7 @@ x-post-gen is a tool designed to help you create and publish multiple posts base
 - Vue.js (scaffolded by create-vue)
 - Tailwind CSS + daisyUI
 - twitter-text-js
+- Lucide Icons
 
 ## assets
 
