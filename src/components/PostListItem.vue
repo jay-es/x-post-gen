@@ -28,21 +28,18 @@ const result = computed(() => {
 </script>
 
 <template>
-  <div class="form-control">
+  <div>
     <textarea
-      class="textarea textarea-bordered resize-none bg-base-200"
+      class="textarea bg-base-200 resize-none"
       readonly
       :value="result.text.trim()"
       @dblclick="($event.target as HTMLTextAreaElement).select()"
     />
-    <div class="label py-px">
-      <ErrorMessage class="label-text">
+    <div class="label flex justify-between px-1 py-px">
+      <ErrorMessage class="text-sm">
         {{ result.errors.join(' ') }}
       </ErrorMessage>
-      <span
-        class="label-text-alt"
-        :class="{ 'text-error': !result.parsed.valid }"
-      >
+      <span class="text-xs" :class="{ 'text-error': !result.parsed.valid }">
         {{ result.parsed.weightedLength }}/280
       </span>
     </div>

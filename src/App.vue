@@ -13,16 +13,13 @@ const data = ref(defaultValues.data)
 <template>
   <main class="grid grid-cols-3 gap-x-6">
     <AppSection title="1. Template">
-      <textarea
-        v-model="template"
-        class="textarea textarea-bordered w-full resize-y"
-      />
+      <textarea v-model="template" class="textarea resize-y" />
       <HowToUse />
     </AppSection>
     <AppSection class="grid grid-rows-[auto_1fr]" title="2. Data">
       <textarea
         v-model="data"
-        class="textarea textarea-bordered resize-none break-all font-mono"
+        class="textarea resize-none font-mono break-all"
       />
     </AppSection>
     <AppSection title="3. Output">

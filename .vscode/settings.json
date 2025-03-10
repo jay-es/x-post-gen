@@ -9,5 +9,8 @@
     "source.fixAll": "explicit"
   },
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.associations": {
+    "**/src/**/*.css": "tailwindcss" // @apply, @plugin の警告対応
+  },
 }
