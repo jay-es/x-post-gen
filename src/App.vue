@@ -13,14 +13,11 @@ const data = ref(defaultValues.data)
 <template>
   <main class="grid grid-cols-3 gap-x-6">
     <AppSection title="1. Template">
-      <textarea v-model="template" class="textarea resize-y" />
+      <UTextarea v-model="template" autoresize class="w-full" />
       <HowToUse />
     </AppSection>
-    <AppSection class="grid grid-rows-[auto_1fr]" title="2. Data">
-      <textarea
-        v-model="data"
-        class="textarea resize-none font-mono break-all"
-      />
+    <AppSection title="2. Data">
+      <UTextarea v-model="data" autoresize class="w-full font-mono break-all" />
     </AppSection>
     <AppSection title="3. Output">
       <PostList :data="data" :template="template" />

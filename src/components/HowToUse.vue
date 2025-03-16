@@ -1,10 +1,6 @@
-<script setup lang="ts">
-import { Info } from 'lucide-vue-next'
-</script>
-
 <template>
-  <h3 class="mb-2 mt-6 flex items-center gap-x-1 text-sm font-medium">
-    <Info class="size-4" /> How To Use
+  <h3 class="mt-6 mb-2 flex items-center gap-x-1 text-sm font-medium">
+    <UIcon class="size-4" name="i-lucide-info" /> How To Use
   </h3>
   <ol class="list-decimal space-y-2 pl-4 text-[0.8rem]">
     <li>

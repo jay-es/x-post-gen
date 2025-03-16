@@ -29,17 +29,25 @@ const result = computed(() => {
 
 <template>
   <div>
-    <textarea
-      class="textarea bg-base-200 resize-none"
+    <UTextarea
+      autoresize
+      class="w-full"
       readonly
+      :rows="null"
       :value="result.text.trim()"
+      variant="subtle"
       @dblclick="($event.target as HTMLTextAreaElement).select()"
     />
-    <div class="label flex justify-between px-1 py-px">
+    <div class="flex justify-between px-1 py-px">
       <ErrorMessage class="text-sm">
         {{ result.errors.join(' ') }}
       </ErrorMessage>
-      <span class="text-xs" :class="{ 'text-error': !result.parsed.valid }">
+      <span
+        class="text-xs"
+        :class="
+          !result.parsed.valid ? 'text-(--ui-error)' : 'text-(--ui-text)/85'
+        "
+      >
         {{ result.parsed.weightedLength }}/280
       </span>
     </div>

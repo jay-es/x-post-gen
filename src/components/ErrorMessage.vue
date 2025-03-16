@@ -1,3 +1,3 @@
 <template>
-  <p class="font-mono text-error"><slot /></p>
+  <p class="font-mono text-(--ui-error)"><slot /></p>
 </template>
